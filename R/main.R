@@ -10,7 +10,7 @@
 #' @return
 #' A data.frame with three or nine columns: The first column has the name as inputted,
 #' the second column has the cleaned up name (no spaces or punctuation, all
-#' lowercase), the third column tells the likely race of the surname. If the
+#' lowercase), the third column tells the likely race of the surname (if there are multiple races with the same probability of a match, it will be a string with each race separated by a comma). If the
 #' parameter probability is false, these three columns are all that is returned.
 #' Otherwise, columns 4-9 tell the specific probability that the surname
 #' is each race.
@@ -34,11 +34,11 @@ predict_race <- function(name, probability = TRUE) {
   }
 
   data <- data.frame(old_name = name,
-                     name = name)
+                     name     = name)
 
   data$name <- tolower(data$name)
   data$name <- gsub("[[:punct:]]| ", "", data$name)
-  data <- dplyr::left_join(data, surnames_race, by = "name")
+  data <- dplyr::left_join(data, predictrace::surnames_race, by = "name")
 
 
   names(data) <- gsub("^name$", "match_name", names(data))
@@ -49,14 +49,14 @@ predict_race <- function(name, probability = TRUE) {
                      "likely_race")]
   } else {
     data <- data[, c("name",
-                    "match_name",
-                    "likely_race",
-                    "probability_american_indian",
-                    "probability_asian",
-                    "probability_black",
-                    "probability_hispanic",
-                    "probability_white",
-                    "probability_2races")]
+                     "match_name",
+                     "likely_race",
+                     "probability_american_indian",
+                     "probability_asian",
+                     "probability_black",
+                     "probability_hispanic",
+                     "probability_white",
+                     "probability_2races")]
   }
   data <- data.frame(data, stringsAsFactors = FALSE)
   data$name <- as.character(data$name)
