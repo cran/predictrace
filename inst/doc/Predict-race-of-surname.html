@@ -12,7 +12,7 @@
 
 <meta name="author" content="Jacob Kaplan" />
 
-<meta name="date" content="2020-07-21" />
+<meta name="date" content="2020-09-16" />
 
 <title>Predict the race of a surname</title>
 
@@ -331,7 +331,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Predict the race of a surname</h1>
 <h4 class="author">Jacob Kaplan</h4>
-<h4 class="date">2020-07-21</h4>
+<h4 class="date">2020-09-16</h4>
 
 
 
@@ -341,25 +341,25 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>The only required parameter is <code>name</code> which is the surname you want to find the race of. Please note that this parameter only accepts surnames, including both first and last name will result in not finding a match in the Census data.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">predict_race</span>(<span class="st">&quot;Washington&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="co">#&gt;         name match_name likely_race probability_american_indian</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; 1 Washington washington       black                      0.0068</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; 1 Washington washington       black                      0.0066</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="co">#&gt;   probability_asian probability_black probability_hispanic probability_white</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#&gt; 1             0.003            0.8753               0.0254            0.0517</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#&gt; 1            0.0028            0.8865               0.0202            0.0517</span></span>
 <span id="cb2-6"><a href="#cb2-6"></a><span class="co">#&gt;   probability_2races</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#&gt; 1             0.0378</span></span></code></pre></div>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#&gt; 1             0.0323</span></span></code></pre></div>
 <p>This function accepts a single string or a vector of strings.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">predict_race</span>(<span class="kw">c</span>(<span class="st">&quot;Washington&quot;</span>, <span class="st">&quot;Franklin&quot;</span>, <span class="st">&quot;Lincoln&quot;</span>))</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="co">#&gt;         name match_name likely_race probability_american_indian</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co">#&gt; 1 Washington washington       black                      0.0068</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co">#&gt; 2   Franklin   franklin       white                      0.0083</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co">#&gt; 3    Lincoln    lincoln       white                      0.0368</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co">#&gt; 1 Washington washington       black                      0.0066</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">#&gt; 2   Franklin   franklin       white                      0.0085</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co">#&gt; 3    Lincoln    lincoln       white                      0.0373</span></span>
 <span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt;   probability_asian probability_black probability_hispanic probability_white</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; 1            0.0030            0.8753               0.0254            0.0517</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; 2            0.0054            0.3876               0.0270            0.5438</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; 3            0.0135            0.1471               0.0251            0.7490</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; 1            0.0028            0.8865               0.0202            0.0517</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; 2            0.0050            0.3828               0.0222            0.5577</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; 3            0.0125            0.1421               0.0215            0.7615</span></span>
 <span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt;   probability_2races</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; 1             0.0378</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; 2             0.0278</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; 3             0.0285</span></span></code></pre></div>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; 1             0.0323</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; 2             0.0238</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; 3             0.0250</span></span></code></pre></div>
 <p>If you only want the most likely race and not the individual probabilities of each race, set the parameter <code>probability</code> to FALSE.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">predict_race</span>(<span class="st">&quot;Washington&quot;</span>, <span class="dt">probability =</span> <span class="ot">FALSE</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt;         name match_name likely_race</span></span>

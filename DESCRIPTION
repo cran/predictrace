@@ -1,6 +1,6 @@
 Package: predictrace
 Title: Predict the Race of a Given Surname Using Census Data
-Version: 1.1.1
+Version: 1.2.1
 Authors@R: 
     person(given = "Jacob",
            family = "Kaplan",
@@ -20,8 +20,8 @@ Imports: dplyr, tidyr, here
 RoxygenNote: 7.1.1
 Language: en-US
 NeedsCompilation: no
-Packaged: 2020-07-21 20:34:20 UTC; user
+Packaged: 2020-09-16 14:38:39 UTC; user
 Author: Jacob Kaplan [aut, cre] (<https://orcid.org/0000-0002-0601-0387>)
 Maintainer: Jacob Kaplan <jkkaplan6@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-07-21 21:10:02 UTC
+Date/Publication: 2020-09-16 14:50:03 UTC
