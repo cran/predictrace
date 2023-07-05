@@ -1,7 +1,7 @@
 Package: predictrace
 Title: Predict the Race and Gender of a Given Name Using Census and
         Social Security Administration Data
-Version: 2.0.0
+Version: 2.0.1
 Authors@R: 
     person(given = "Jacob",
            family = "Kaplan",
@@ -23,8 +23,8 @@ RoxygenNote: 7.1.1
 Language: en-US
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2021-04-23 19:41:51 UTC; jkkap
+Packaged: 2023-07-05 18:20:08 UTC; jkkap
 Author: Jacob Kaplan [aut, cre] (<https://orcid.org/0000-0002-0601-0387>)
 Maintainer: Jacob Kaplan <jkkaplan6@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-04-23 19:50:06 UTC
+Date/Publication: 2023-07-05 23:20:02 UTC
